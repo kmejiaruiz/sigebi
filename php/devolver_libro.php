@@ -5,6 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 require 'db.php';
+require '../templates/header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $prestamo_id = $_POST['prestamo_id'];
@@ -28,14 +29,9 @@ $query->execute([$user_id]);
 $prestamos = $query->fetchAll();
 ?>
 
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>Devolver Libro</title>
-</head>
-
-<body>
+<title>Devolver Libro</title>
+<div class="container">
     <form method="post" action="">
         <label>Libro a Devolver:</label>
         <select name="prestamo_id">
@@ -45,6 +41,6 @@ $prestamos = $query->fetchAll();
         </select>
         <button type="submit">Devolver</button>
     </form>
-</body>
+</div>
 
-</html>
+<?php require_once "../templates/footer.php"; ?>

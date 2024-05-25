@@ -39,13 +39,16 @@ $libros = $query->fetchAll();
 
 
 <title>Eliminar Libro</title>
-<form method="post" action="">
-    <label>Libro:</label>
-    <select name="libro_id">
-        <?php foreach ($libros as $libro) : ?>
-            <option value="<?= $libro['id'] ?>"><?= htmlspecialchars($libro['titulo']) ?></option>
-        <?php endforeach; ?>
-    </select>
-    <button type="submit">Eliminar</button>
-</form>
+<div class="container">
+    <form method="post" action="">
+        <label>Libro:</label>
+        <select name="libro_id">
+            <?php foreach ($libros as $libro) : ?>
+                <option value="<?= $libro['id'] ?>"><?= htmlspecialchars($libro['titulo']) ?></option>
+            <?php endforeach; ?>
+        </select>
+        <button type="submit">Eliminar</button>
+    </form>
+</div>
+
 <?php require_once '../templates/footer.php'; ?>

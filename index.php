@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'php/db.php';
+require_once 'templates/header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -20,14 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>Inicio de Sesión</title>
-</head>
-
-<body>
+<title>Inicio de Sesión</title>
+<div class="container">
     <form method="post" action="">
         <label>Usuario:</label>
         <input type="text" name="username" required>
@@ -35,10 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="password" name="password" required>
         <button type="submit">Ingresar</button>
     </form>
-    <a href="php/registro.php">Agregar</a>
-    <?php if (isset($error)) : ?>
-        <p><?= $error ?></p>
-    <?php endif; ?>
-</body>
+</div>
 
-</html>
+<a href="php/registro.php">Agregar</a>
+<?php if (isset($error)) : ?>
+    <p><?= $error ?></p>
+<?php endif;
+require_once 'templates/footer.php';

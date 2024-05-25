@@ -5,6 +5,7 @@ if (!isset($_SESSION['user_id']) || !$_SESSION['es_admin']) {
     exit;
 }
 require 'db.php';
+require '../templates/header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -19,14 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Crear Administrador</title>
-</head>
-
-<body>
+<title>Crear Administrador</title>
+<div class="container">
     <form method="post" action="">
         <label>Usuario:</label>
         <input type="text" name="username" required>
@@ -38,6 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="nombre" required>
         <button type="submit">Crear</button>
     </form>
-</body>
+</div>
 
-</html>
+<?php require '../templates/footer.php';

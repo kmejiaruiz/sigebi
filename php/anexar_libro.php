@@ -20,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 
-    <title>Anexar Libro</title>
+<title>Anexar Libro</title>
 
-<body>
+<div class="container">
     <form method="post" action="">
         <label>Título:</label>
         <input type="text" name="titulo" required>
@@ -32,4 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="number" name="ano_publicacion" required>
         <button type="submit">Anexar</button>
     </form>
+</div>
+
 <?php require_once "../templates/footer.php";

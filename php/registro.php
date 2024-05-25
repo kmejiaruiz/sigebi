@@ -17,16 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 <title>Registro de Usuario</title>
+<div class="container">
+    <form method="post" action="">
+        <label>Usuario:</label>
+        <input type="text" name="username" required>
+        <label>Contraseña:</label>
+        <input type="password" name="password" required>
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required>
+        <button type="submit">Registrar</button>
+    </form>
+</div>
 
-<form method="post" action="">
-    <label>Usuario:</label>
-    <input type="text" name="username" required>
-    <label>Contraseña:</label>
-    <input type="password" name="password" required>
-    <label>Email:</label>
-    <input type="email" name="email" required>
-    <label>Nombre:</label>
-    <input type="text" name="nombre" required>
-    <button type="submit">Registrar</button>
-</form>
 <?php require_once '../templates/footer.php'; ?>
